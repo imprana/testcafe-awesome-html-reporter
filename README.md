@@ -1,6 +1,4 @@
-[<img width="110" src="https://avatars3.githubusercontent.com/u/38539999?s=200&v=4g" />](https://picuscreative.com)
-
-# testcafe-reporter-html
+# testcafe-nice-html-reporter
 
 PICUS' HTML reporter generator for TestCafe automated tests. It provides an HTML report of a TestCafe task(s) execution, as well as feedback on the errors, if these occurred. Also it provides an easy way to view the screenshots from failing tests.
 
@@ -57,4 +55,4 @@ By participating in this project, you agree to abide by the PICUS [code of condu
 
 ## LICENSE
 
-[MIT License](https://opensource.org/licenses/MIT) - [PICUS](https://picuscreative.com)
+[MIT License](https://opensource.org/licenses/MIT)

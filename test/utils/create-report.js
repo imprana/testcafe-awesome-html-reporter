@@ -1,12 +1,14 @@
 /* eslint global-require: 0 */
 /* eslint import/no-unresolved: 0 */
 
-import pluginFactory from '../../lib/index.js';
 import reporterTestCalls from './reporter-test-calls.js';
 import testcafe from 'testcafe';
 const { embeddingUtils } = testcafe;
 
-export default function createReport(withColors) {
+export default async function createReport(withColors) {
+  const pkg = await import('../../lib/index.js');
+  const pluginFactory = pkg.default || pkg;
+  // ...existing code...
   const outStream = {
     data: '',
 

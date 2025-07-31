@@ -2,6 +2,7 @@
   "name": "testcafe-awesome-reporter-html",
   "version": "1.0.0",
   "description": "The HTML reporter for TestCafe",
+  "type": "module",
   "keywords": [
     "testcafe",
     "reporter",
@@ -39,23 +40,24 @@
       "@commitlint/config-conventional"
     ]
   },
-  "dependencies": {},
-  "devDependencies": {
-    "callsite-record": "^4.1.5",
-    "cross-env": "^10.0.0",
-    "del": "^9.0.0",
+  "dependencies": {
+    "del": "^6.0.0",
     "gulp": "^5.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-eslint": "^6.0.0",
     "gulp-mocha": "^10.0.1",
+    "testcafe": "^3.7.2"
+  },
+  "devDependencies": {
+    "callsite-record": "^4.1.5",
+    "cross-env": "^10.0.0",
     "normalize-newline": "^4.1.0",
     "read-file-relative": "^1.2.0",
-    "testcafe": "^3.7.2",
     "@babel/core": "^7.28.0",
     "@babel/preset-env": "^7.28.0",
     "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
-    "eslint": "^9.32.0",
+    "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.32.0",
     "husky": "^9.1.7",

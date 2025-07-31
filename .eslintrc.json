@@ -8,5 +8,16 @@
   },
   "extends": [
     "airbnb-base"
-  ]
+  ],
+  "rules": {
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "mjs": "never",
+        "ts": "never"
+      }
+    ]
+  }
 }

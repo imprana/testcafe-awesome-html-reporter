@@ -1,7 +1,9 @@
-const { TestRunErrorFormattableAdapter } = require('testcafe').embeddingUtils;
-const { UncaughtErrorOnPage } = require('testcafe').embeddingUtils.testRunErrors;
-const { ActionElementNotFoundError } = require('testcafe').embeddingUtils.testRunErrors;
-const testCallsite = require('./test-callsite');
+import testcafe from 'testcafe';
+const { embeddingUtils } = testcafe;
+import testCallsite from './test-callsite.js';
+
+const { TestRunErrorFormattableAdapter } = embeddingUtils;
+const { UncaughtErrorOnPage, ActionElementNotFoundError } = embeddingUtils.testRunErrors;
 
 function makeErrors(errDescrs) {
   return errDescrs.map((descr) => new TestRunErrorFormattableAdapter(descr.err, descr.metaInfo));
@@ -10,7 +12,7 @@ function makeErrors(errDescrs) {
 const startDate = new Date('1970-01-01T00:00:00.000Z');
 const endDate = new Date('1970-01-01T00:15:25.000Z');
 
-module.exports = [
+export default [
   {
     method: 'reportTaskStart',
     args: [
@@ -48,9 +50,7 @@ module.exports = [
       {
         errs: makeErrors([
           {
-
             err: new UncaughtErrorOnPage('Some error', 'http://example.org'),
-
             metaInfo: {
               userAgent: 'Chrome 41.0.2227 / Mac OS X 10.10.1',
               screenshotPath: '/screenshots/1445437598847/errors',
@@ -60,7 +60,6 @@ module.exports = [
           },
           {
             err: new ActionElementNotFoundError({ apiFnChain: [] }),
-
             metaInfo: {
               userAgent: 'Firefox 47 / Mac OS X 10.10.1',
               callsite: testCallsite,
@@ -68,7 +67,6 @@ module.exports = [
             },
           },
         ]),
-
         durationMs: 74000,
         unstable: false,
         screenshotPath: '/screenshots/1445437598847',
@@ -146,7 +144,6 @@ module.exports = [
         errs: makeErrors([
           {
             err: new ActionElementNotFoundError({ apiFnChain: [] }),
-
             metaInfo: {
               userAgent: 'Firefox 47 / Mac OS X 10.10.1',
               callsite: testCallsite,
@@ -154,7 +151,6 @@ module.exports = [
             },
           },
         ]),
-
         durationMs: 74000,
         unstable: true,
         screenshotPath: null,

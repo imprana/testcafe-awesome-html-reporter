@@ -1,7 +1,7 @@
-const assert = require('assert');
-const normalizeNewline = require('normalize-newline');
-const read = require('read-file-relative').readSync;
-const createReport = require('./utils/create-report');
+import assert from 'assert';
+import normalizeNewline from 'normalize-newline';
+import { readSync as read } from 'read-file-relative';
+import createReport from './utils/create-report.js';
 
 it('Should produce report with colors', () => {
   let report = createReport(true);

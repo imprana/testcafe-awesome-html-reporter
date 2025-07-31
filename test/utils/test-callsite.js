@@ -1,11 +1,15 @@
-const createCallsiteRecord = require('callsite-record');
+import createCallsiteRecord from 'callsite-record';
 
 function someFunc() {
   throw new Error('Hey ya!');
 }
 
+let callsiteRecord;
+
 try {
   someFunc();
 } catch (err) {
-  module.exports = createCallsiteRecord(err);
+  callsiteRecord = createCallsiteRecord(err);
 }
+
+export default callsiteRecord;

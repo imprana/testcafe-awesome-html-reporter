@@ -1,12 +1,12 @@
 /* eslint global-require: 0 */
 /* eslint import/no-unresolved: 0 */
 
-const gulp = require('gulp');
-const babel = require('gulp-babel');
-const mocha = require('gulp-mocha');
-const del = require('del');
+import gulp from 'gulp';
+import babel from 'gulp-babel';
+import mocha from 'gulp-mocha';
+import del from 'del';
 
-gulp.task('clean', (cb) => del('lib', cb));
+gulp.task('clean', () => del('lib'));
 
 gulp.task('build', gulp.series(['clean'], () => gulp
   .src('src/**/*.js')

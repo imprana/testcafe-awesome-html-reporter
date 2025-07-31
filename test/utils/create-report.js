@@ -1,11 +1,12 @@
 /* eslint global-require: 0 */
 /* eslint import/no-unresolved: 0 */
 
-const { buildReporterPlugin } = require('testcafe').embeddingUtils;
-const pluginFactory = require('../../lib');
-const reporterTestCalls = require('./reporter-test-calls');
+import pluginFactory from '../../lib/index.js';
+import reporterTestCalls from './reporter-test-calls.js';
+import testcafe from 'testcafe';
+const { embeddingUtils } = testcafe;
 
-module.exports = function createReport(withColors) {
+export default function createReport(withColors) {
   const outStream = {
     data: '',
 
@@ -41,4 +42,4 @@ module.exports = function createReport(withColors) {
 
   // NOTE: mock stack entries
   return outStream.data.replace(/\s*?\(.+?:\d+:\d+\)/g, ' (some-file:1:1)');
-};
+}
